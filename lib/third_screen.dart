@@ -12,15 +12,15 @@ class _ThirdScreen extends State<ThirdScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Third Screen"),
+          title: Text("back"),
         ),
         body: Column(children: [
           OutlinedButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const ThirdScreen()));
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => ThirdScreen()));
               },
-              child: Text("Move To Fourth"))
+              child: Text("Move To Fourth")),
         ]));
   }
 }

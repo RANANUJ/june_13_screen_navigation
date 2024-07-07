@@ -10,6 +10,7 @@ class June13ScreenNavigtion extends StatefulWidget {
 }
 
 class _June13ScreenNavigation extends State<June13ScreenNavigtion> {
+  var textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,10 +19,18 @@ class _June13ScreenNavigation extends State<June13ScreenNavigtion> {
       ),
       body: Column(
         children: [
+          TextField(
+            controller: textController,
+          ),
           TextButton(
               onPressed: () {
+                if (textController.text.toString().isEmpty) {
+                  return;
+                }
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SecondScreen()));
+                    builder: (context) => SecondScreen(
+                          text: textController.text,
+                        )));
               },
               child: const Text("Navigate to second screen"))
         ],
